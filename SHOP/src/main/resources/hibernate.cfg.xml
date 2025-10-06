@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- datos de MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/shop?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!--dialecto -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--para que no cree tablas en  la bd-->
+        <property name="hibernate.hbm2ddl.auto">validate</property>
+
+        <!--para mostrar consultas en consola -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!--Mapeo de entidades -->
+        <mapping class="tienda.Cliente"/>
+        <mapping class="tienda.Producto"/>
+        <mapping class="tienda.Categoria"/>
+        <mapping class="tienda.Pedido"/>
+        <mapping class="tienda.Factura"/>
+    </session-factory>
+</hibernate-configuration>
